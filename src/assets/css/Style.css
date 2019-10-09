@@ -1,4 +1,4 @@
-body {
+.body {
     display: flex;
     min-height: 100vh;
     background: white;
@@ -27,7 +27,7 @@ body {
 
 /*Start - Auth Page*/
 .auth-body {
-    background: url("../assets/background_auth.jpg") no-repeat center center fixed;
+    background: url("../images/background_auth.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
