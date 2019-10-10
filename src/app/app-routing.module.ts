@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { IsAdmin } from './guards/is_admin';
+import { AppGuard } from './guards/is_authentificated';
 
 
 
@@ -15,7 +17,8 @@ export const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./modules/home/home.module').then(mod => mod.HomeModule)
+    loadChildren: () => import('./modules/home/home.module').then(mod => mod.HomeModule),
+    canActivate: [AppGuard, IsAdmin],
   },
   {  
     path: '**',

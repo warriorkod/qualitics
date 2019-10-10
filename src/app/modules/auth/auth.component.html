@@ -1,17 +1,20 @@
 
 <div class="body auth-body">
     <div class="auth-container">
-        <form class="auth-form" method="post" action="">
+        <form [formGroup]='loginForm' class="auth-form" (ngSubmit)="onLogin(loginForm.value)">
             <img src="../../../assets/images/logo-qualitics-black.png" alt="Logo" class="logo"/>
     
             <div class="input-field">
                 <label class='auth-field' for="username">Username</label>
-                <input type="text" name="username" id="username" class='auth-field' autocomplete="on">
+                <input type="text" formControlName="login" id="username" class='auth-field' autocomplete="on">
+                <p *ngIf="formErrors['login'] != ''" class="valid-error"> {{ formErrors['login'] }}</p>
             </div>
     
             <div class="input-field">
                 <label class='auth-field' for="pass">Password</label>
-                <input type="password" name="password" id="pass" class='auth-field' autocomplete="on">
+                <input type="password" formControlName="pass" id="pass" class='auth-field' autocomplete="on">
+                <p *ngIf="formErrors['password'] != ''" class="valid-error"> {{ formErrors['password'] }}</p>
+
             </div>
     
             <div class="button auth-button">
